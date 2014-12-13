@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug'           => false,
+	'debug'           => getenv('DEBUG_MODE'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url'             => 'http://localhost',
+	'url'             => getenv('APPLICATION_URL'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone'        => 'UTC',
+	'timezone'        => 'Europe/Athens',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,8 @@ return [
 	|
 	*/
 
-	'key'             => 'RgCosZ6bj93wz6fKyDbHrGYcMXV1tTiv',
+	/* Should be provided from .env.*.php file */
+	'key'             => getenv('ILLUMINATE_ENCRYPTER_KEY'),
 
 	'cipher'          => MCRYPT_RIJNDAEL_128,
 

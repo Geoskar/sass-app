@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'fetch' => PDO::FETCH_CLASS,
+	'fetch'       => PDO::FETCH_CLASS,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default'     => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -44,26 +44,26 @@ return array(
 	|
 	*/
 
-	'connections' => array(
+	'connections' => [
 
-		'sqlite' => array(
+		'sqlite' => [
 			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
+			'database' => __DIR__ . '/../database/production.sqlite',
 			'prefix'   => '',
-		),
+		],
 
-		'mysql' => array(
+		'mysql'  => [
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'      => getenv('DB_HOST'),
+			'database'  => getenv('DB_NAME'),
+			'username'  => getenv('DB_USERNAME'),
+			'password'  => getenv('DB_PASSWORD'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-		),
+		],
 
-		'pgsql' => array(
+		'pgsql'  => [
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
 			'database' => 'forge',
@@ -72,18 +72,18 @@ return array(
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
-		),
+		],
 
-		'sqlsrv' => array(
+		'sqlsrv' => [
 			'driver'   => 'sqlsrv',
 			'host'     => 'localhost',
 			'database' => 'database',
 			'username' => 'root',
 			'password' => '',
 			'prefix'   => '',
-		),
+		],
 
-	),
+	],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return array(
 	|
 	*/
 
-	'migrations' => 'migrations',
+	'migrations'  => 'migrations',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -109,16 +109,16 @@ return array(
 	|
 	*/
 
-	'redis' => array(
+	'redis'       => [
 
 		'cluster' => false,
 
-		'default' => array(
+		'default' => [
 			'host'     => '127.0.0.1',
 			'port'     => 6379,
 			'database' => 0,
-		),
+		],
 
-	),
+	],
 
-);
+];
