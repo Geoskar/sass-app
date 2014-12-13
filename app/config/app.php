@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug'           => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url'             => 'http://localhost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone'        => 'UTC',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'locale' => 'en',
+	'locale'          => 'en',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,9 +78,9 @@ return array(
 	|
 	*/
 
-	'key' => 'RgCosZ6bj93wz6fKyDbHrGYcMXV1tTiv',
+	'key'             => 'RgCosZ6bj93wz6fKyDbHrGYcMXV1tTiv',
 
-	'cipher' => MCRYPT_RIJNDAEL_128,
+	'cipher'          => MCRYPT_RIJNDAEL_128,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'providers' => array(
+	'providers'       => [
 
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
@@ -121,8 +121,9 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
-	),
+		'Way\Generators\GeneratorsServiceProvider',
+		'Laracasts\Commander\CommanderServiceProvider'
+	],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -135,7 +136,7 @@ return array(
 	|
 	*/
 
-	'manifest' => storage_path().'/meta',
+	'manifest'        => storage_path() . '/meta',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -148,7 +149,7 @@ return array(
 	|
 	*/
 
-	'aliases' => array(
+	'aliases'         => [
 
 		'App'               => 'Illuminate\Support\Facades\App',
 		'Artisan'           => 'Illuminate\Support\Facades\Artisan',
@@ -189,6 +190,6 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 
-	),
+	],
 
-);
+];
