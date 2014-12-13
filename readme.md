@@ -1,25 +1,59 @@
-## Laravel PHP Framework
+# SASS App
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+A web app helping peer tutoring workshops. It manages:
+  - Academic data (courses, majors, students, tutors)
+  - Appointments data (start/end date, course, student(s), tutor)
+  - Automatic sync (period excel/database to dropbox)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+### Version
+3.0
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Tech
 
-## Official Documentation
+SASS App uses a number of open source projects to work properly:
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+* [AngularJS] - HTML enhanced for web apps!
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+* [Gulp] - the streaming build system
+* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
+* [Laravel] - duh
+* [Laravel] -  A built on top of several Symfony components, giving applications a great foundation of well-tested and reliable code
 
-### Contributing To Laravel
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+### Plugins
 
-### License
+SASS App is currently extended with plugins:
+* Dropbox
+* Github
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+### Development
+
+Want to contribute? Great!
+
+SASS App uses the PHP [Laravel framework](laravel_framework).
+
+Open your favorite Terminal and run these commands.
+
+Get the repo:
+```
+$ git clone git@github.com:sass-team/sass-app.git
+```
+
+Use Laravel [homestead](laravel_homestead) for development
+
+### Todo's
+
+ - Write Tests
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
+
+[laravel_framework]: http://laravel.com/
+[laravel_homestead]: http://laravel.com/docs/4.2/homestead
