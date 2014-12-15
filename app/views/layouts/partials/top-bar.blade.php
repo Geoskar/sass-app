@@ -1,28 +1,5 @@
 <nav id="top-bar" class="collapse top-bar-collapse">
 
-    <ul class="nav navbar-nav pull-left">
-        <li class="">
-            <a href="./index.html">
-                <i class="icon-home"></i>
-                Home
-            </a>
-        </li>
-
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
-                Dropdown <span class="caret"></span>
-            </a>
-
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="javascript:;">Example #1</a></li>
-                <li><a href="javascript:;">Example #2</a></li>
-                <li class="divider"></li>
-                <li><a href="javascript:;">Example #3</a></li>
-            </ul>
-        </li>
-
-    </ul>
-
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">

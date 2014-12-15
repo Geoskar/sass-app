@@ -32,8 +32,6 @@
 
     @include('layouts.partials.top-bar')
 
-    @include('layouts.partials.search')
-
     @include('layouts.partials.sidebar')
 
     <div id="content">

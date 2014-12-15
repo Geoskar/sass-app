@@ -1,36 +1,48 @@
-<nav id="sidebar">
+<div id="sidebar-wrapper" class="collapse sidebar-collapse">
 
-    <ul id="main-nav" class="open-active">
+    <div id="search">
+        <form>
+            <input class="form-control input-sm" type="text" name="search" placeholder="Search..."/>
+            <button type="submit" id="search-btn" class="btn"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <!-- #search -->
 
-        <li class="">
-            <a href="./index.html">
-                <i class="icon-dashboard"></i>
-                Dashboard
-            </a>
-        </li>
 
-        <li class="dropdown">
-            <a href="javascript:;">
-                <i class="icon-file-text"></i>
-                Example Pages
-                <span class="caret"></span>
-            </a>
+    <nav id="sidebar">
+        <ul id="main-nav" class="open-active">
 
-            <ul class="sub-nav">
-                <li>
-                    <a href="./page-profile.html">
-                        <i class="icon-user"></i>
-                        Profile
-                    </a>
-                </li>
-                <li>
-                    <a href="./page-invoice.html">
-                        <i class="icon-money"></i>
-                        Invoice
-                    </a>
-                </li>
-            </ul>
-        </li>
+            <li class="">
+                <a href="./index.html">
+                    <i class="fa fa-tachometer"></i>
+                    Dashboard
+                </a>
+            </li>
 
-    </ul>
-</nav><!-- /#sidebar -->
+            <li class="dropdown">
+                <a href="javascript:;">
+                    <i class="fa fa-file-text"></i>
+                    Example Pages
+                    <span class="caret"></span>
+                </a>
+
+                <ul class="sub-nav">
+                    <li>
+                        <a href="./page-profile.html">
+                            <i class="fa fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page-invoice.html">
+                            <i class="fa fa-money"></i>
+                            Invoice
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+    <!-- /#sidebar -->
+</div><!-- /#sidebar-wrapper -->
