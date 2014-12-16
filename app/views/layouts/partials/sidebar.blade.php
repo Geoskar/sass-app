@@ -15,28 +15,35 @@
             <li class="">
                 <a href="./index.html">
                     <i class="fa fa-tachometer"></i>
-                    Dashboard
+                    {{ Route::currentRouteName() }}
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="./index.html">
+                    <i class="fa fa-users"></i>
+                    Users
                 </a>
             </li>
 
             <li class="dropdown">
                 <a href="javascript:;">
-                    <i class="fa fa-file-text"></i>
-                    Example Pages
+                    <i class="fa fa-users"></i>
+                    Users
                     <span class="caret"></span>
                 </a>
 
                 <ul class="sub-nav">
                     <li>
                         <a href="./page-profile.html">
-                            <i class="fa fa-user"></i>
-                            Profile
+                            <i class="fa fa-list"></i>
+                            List
                         </a>
                     </li>
                     <li>
                         <a href="./page-invoice.html">
-                            <i class="fa fa-money"></i>
-                            Invoice
+                            <i class="fa fa-plus-square-o"></i>
+                            Add
                         </a>
                     </li>
                 </ul>

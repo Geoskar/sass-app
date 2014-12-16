@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="">
     <meta name="author" content=""/>
+    <link rel="shortcut icon" href="{{ 'favicon.ico' }}">
 
     {{HTML::style('https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,800italic,400,600,800')}}
     {{HTML::style('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')}}
