@@ -26,7 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(function ()
 {
-	return getenv('APP_ENV');
+	$app_var = include __DIR__ . "/../.env.php";
+	return $app_var['APP_ENV'];
 });
 
 /*

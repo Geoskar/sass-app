@@ -18,7 +18,7 @@
 |
 */
 
-require __DIR__.'/../bootstrap/autoload.php';
+require __DIR__ . '/../bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ require __DIR__.'/../bootstrap/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/start.php';
+$app = require_once __DIR__ . '/../bootstrap/start.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +45,8 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 | and wonderful application we have whipped up for them.
 |
 */
+var_dump(getenv('APP_ENV'));
+dd(\App::environment());
 
 $app->run();
+

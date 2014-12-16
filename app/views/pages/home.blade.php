@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="content-header">
-        <h1>Blank Page</h1>
+        <h1>Blank Page - Env: {{ $env }}</h1>
     </div> <!-- #content-header -->
 
     <div id="content-container">
