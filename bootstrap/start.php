@@ -26,8 +26,15 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(function ()
 {
-	$app_var = include __DIR__ . "/../.env.php";
-	return $app_var['APP_ENV'];
+	$app_env = "local";
+
+	if (file_exists($app_path_info = __DIR__ . "/../.env.php"))
+	{
+		$app_env = include $app_path_info;
+		$app_env = $app_env['APP_ENV'];
+	}
+
+	return $app_env;
 });
 
 /*

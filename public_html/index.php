@@ -45,8 +45,5 @@ $app = require_once __DIR__ . '/../bootstrap/start.php';
 | and wonderful application we have whipped up for them.
 |
 */
-var_dump(getenv('APP_ENV'));
-dd(\App::environment());
 
 $app->run();
-
