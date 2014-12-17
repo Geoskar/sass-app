@@ -5,7 +5,7 @@ class PagesController extends \BaseController {
 	public function home()
 	{
 		return View::make('pages.home')
-			->with('title', 'Home');
+			->with('title', 'Dashboard');
 	}
 
 	public function users()

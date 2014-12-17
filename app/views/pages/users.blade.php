@@ -17,8 +17,16 @@
 
                         <h3>
                             <i class="fa fa-table"></i>
-                            Kitchen Sink
+                            Manage
                         </h3>
+
+                        <ul class="portlet-tools pull-right">
+                            <li>
+                                <button class="btn btn-sm btn-default">
+                                    Add User
+                                </button>
+                            </li>
+                        </ul>
 
                     </div>
                     <!-- /.portlet-header -->
@@ -38,9 +46,6 @@
                                     >
                                 <thead>
                                 <tr>
-                                    <th class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </th>
                                     <th data-filterable="true" data-sortable="true" data-direction="desc">Rendering engine</th>
                                     <th data-direction="asc" data-filterable="true" data-sortable="true">Browser</th>
                                     <th data-filterable="true" data-sortable="true">Platform(s)</th>
@@ -50,9 +55,6 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
                                     <td>Trident</td>
                                     <td>Internet
                                         Explorer 5.0
@@ -62,9 +64,6 @@
                                     <td class="hidden-xs hidden-sm">C</td>
                                 </tr>
                                 <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
                                     <td>Trident</td>
                                     <td>Internet
                                         Explorer 5.5
@@ -74,9 +73,6 @@
                                     <td class="hidden-xs hidden-sm">A</td>
                                 </tr>
                                 <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
                                     <td>Trident</td>
                                     <td>Internet
                                         Explorer 6
@@ -86,76 +82,21 @@
                                     <td class="hidden-xs hidden-sm">A</td>
                                 </tr>
                                 <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
                                     <td>Trident</td>
                                     <td>Internet Explorer 7</td>
                                     <td>Win XP SP2+</td>
                                     <td class="hidden-xs hidden-sm">7</td>
                                     <td class="hidden-xs hidden-sm">A</td>
                                 </tr>
-                                <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
-                                    <td>Trident</td>
-                                    <td>AOL browser (AOL desktop)</td>
-                                    <td>Win XP</td>
-                                    <td class="hidden-xs hidden-sm">6</td>
-                                    <td class="hidden-xs hidden-sm">A</td>
-                                </tr>
-                                <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
-                                    <td>Gecko</td>
-                                    <td>Firefox 3.0</td>
-                                    <td>Win 2k+ / OSX.3+</td>
-                                    <td class="hidden-xs hidden-sm">1.9</td>
-                                    <td class="hidden-xs hidden-sm">A</td>
-                                </tr>
-                                <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
-                                    <td>Gecko</td>
-                                    <td>Camino 1.0</td>
-                                    <td>OSX.2+</td>
-                                    <td class="hidden-xs hidden-sm">1.8</td>
-                                    <td class="hidden-xs hidden-sm">A</td>
-                                </tr>
-                                <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
-                                    <td>Gecko</td>
-                                    <td>Camino 1.5</td>
-                                    <td>OSX.3+</td>
-                                    <td class="hidden-xs hidden-sm">1.8</td>
-                                    <td class="hidden-xs hidden-sm">A</td>
-                                </tr>
-                                <tr>
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
-                                    <td>Gecko</td>
-                                    <td>Netscape 7.2</td>
-                                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                    <td class="hidden-xs hidden-sm">1.7</td>
-                                    <td class="hidden-xs hidden-sm">A</td>
-                                </tr>
 
                                 <tr class="">
-                                    <td class="checkbox-column">
-                                        <input type="checkbox" class="icheck-input">
-                                    </td>
                                     <td>Webkit</td>
                                     <td>Safari 3.0</td>
                                     <td>OSX.4+</td>
                                     <td class="hidden-xs hidden-sm">522.1</td>
                                     <td class="hidden-xs hidden-sm">A</td>
                                 </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -174,4 +115,10 @@
         </div> <!-- /.row -->
 
     </div>
+@stop
+
+@section('page-scripts')
+    {{ HTML::script('js/plugins/datatables/jquery.dataTables.min.js') }}
+    {{ HTML::script('js/plugins/datatables/DT_bootstrap.js') }}
+    {{ HTML::script('js/plugins/tableCheckable/jquery.tableCheckable.js') }}
 @stop
