@@ -43,10 +43,10 @@ class WebDriverWait {
    * @return mixed The return value of $func_or_ec
    */
   public function until($func_or_ec, $message = "") {
-    $end = microtime(true) + $this->timeout;
+    $end = time() + $this->timeout;
     $last_exception = null;
 
-    while ($end > microtime(true)) {
+    while ($end > time()) {
       try {
         if ($func_or_ec instanceof WebDriverExpectedCondition) {
           $ret_val = call_user_func($func_or_ec->getApply(), $this->driver);
@@ -56,7 +56,7 @@ class WebDriverWait {
         if ($ret_val) {
           return $ret_val;
         }
-      } catch (NoSuchElementException $e) {
+      } catch (NoSuchElementWebDriverError $e) {
         $last_exception = $e;
       }
       usleep($this->interval * 1000);
@@ -65,6 +65,6 @@ class WebDriverWait {
     if ($last_exception) {
       throw $last_exception;
     }
-    throw new TimeOutException($message);
+    throw new TimeOutWebDriverError($message);
   }
 }

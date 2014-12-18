@@ -30,7 +30,7 @@ class WebDriverAlert {
    * @return WebDriverAlert The instance.
    */
   public function accept() {
-    $this->executor->execute(DriverCommand::ACCEPT_ALERT);
+    $this->executor->execute('acceptAlert');
     return $this;
   }
 
@@ -40,7 +40,7 @@ class WebDriverAlert {
    * @return WebDriverAlert The instance.
    */
   public function dismiss() {
-    $this->executor->execute(DriverCommand::DISMISS_ALERT);
+    $this->executor->execute('dismissAlert');
     return $this;
   }
 
@@ -50,7 +50,7 @@ class WebDriverAlert {
    * @return string
    */
   public function getText() {
-    return $this->executor->execute(DriverCommand::GET_ALERT_TEXT);
+    return $this->executor->execute('getAlertText');
   }
 
   /**
@@ -59,10 +59,7 @@ class WebDriverAlert {
    * @return WebDriverAlert
    */
   public function sendKeys($value) {
-    $this->executor->execute(
-      DriverCommand::SET_ALERT_VALUE,
-      array('text' => $value)
-    );
+    $this->executor->execute('sendKeysToAlert', array('text' => $value));
     return $this;
   }
 

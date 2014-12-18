@@ -33,7 +33,7 @@ class WebDriverTargetLocator {
    * @return WebDriver The driver focused on the top window or the first frame.
    */
   public function defaultContent() {
-    $this->executor->execute(DriverCommand::SWITCH_TO_FRAME, array());
+    $this->executor->execute('focusFrame', array());
 
     return $this->driver;
   }
@@ -41,19 +41,11 @@ class WebDriverTargetLocator {
   /**
    * Switch to the iframe by its id or name.
    *
-   * @param WebDriverElement|string $frame The WebDriverElement,
-                                           the id or the name of the frame.
    * @return WebDriver The driver focused on the given frame.
    */
-  public function frame($frame) {
-    if ($frame instanceof WebDriverElement) {
-      $id = array('ELEMENT' => $frame->getID());
-    } else {
-      $id = (string)$frame;
-    }
-
-    $params = array('id' => $id);
-    $this->executor->execute(DriverCommand::SWITCH_TO_FRAME, $params);
+  public function frame($id_or_name) {
+    $params = array('id' => (string)$id_or_name);
+    $this->executor->execute('focusFrame', $params);
 
     return $this->driver;
   }
@@ -67,7 +59,7 @@ class WebDriverTargetLocator {
    */
   public function window($handle) {
     $params = array('name' => (string)$handle);
-    $this->executor->execute(DriverCommand::SWITCH_TO_WINDOW, $params);
+    $this->executor->execute('focusWindow', $params);
 
     return $this->driver;
   }

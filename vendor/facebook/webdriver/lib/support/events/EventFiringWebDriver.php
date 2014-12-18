@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
+class EventFiringWebDriver implements WebDriver {
 
   /**
    * @var WebDriver
@@ -47,8 +47,7 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
   }
 
   /**
-   * @param mixed $method
-   * @return void
+   * @param $method
    */
   protected function dispatch($method) {
     if (!$this->dispatcher) {
@@ -76,7 +75,7 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
   }
 
   /**
-   * @param mixed $url
+   * @param $url
    * @return $this
    * @throws WebDriverException
    */
@@ -134,38 +133,9 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
    * @throws WebDriverException
    */
   public function executeScript($script, array $arguments = array()) {
-    if (!$this->driver instanceof JavaScriptExecutor) {
-      throw new UnsupportedOperationException(
-        'driver does not implement JavaScriptExecutor'
-      );
-    }
-
     $this->dispatch('beforeScript', $script, $this);
     try {
       $result = $this->driver->executeScript($script, $arguments);
-    } catch (WebDriverException $exception) {
-      $this->dispatchOnException($exception);
-    }
-    $this->dispatch('afterScript', $script, $this);
-    return $result;
-  }
-
-  /**
-   * @param       $script
-   * @param array $arguments
-   * @return mixed
-   * @throws WebDriverException
-   */
-  public function executeAsyncScript($script, array $arguments = array()) {
-    if (!$this->driver instanceof JavaScriptExecutor) {
-      throw new UnsupportedOperationException(
-        'driver does not implement JavaScriptExecutor'
-      );
-    }
-
-    $this->dispatch('beforeScript', $script, $this);
-    try {
-      $result = $this->driver->executeAsyncScript($script, $arguments);
     } catch (WebDriverException $exception) {
       $this->dispatchOnException($exception);
     }
@@ -258,7 +228,7 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
   }
 
   /**
-   * @param null|string $save_as
+   * @param null $save_as
    * @return string
    * @throws WebDriverException
    */
@@ -352,13 +322,5 @@ class EventFiringWebDriver implements WebDriver, JavaScriptExecutor {
   private function dispatchOnException($exception) {
     $this->dispatch('onException', $exception, $this);
     throw $exception;
-  }
-
-  public function execute($name, $params) {
-    try {
-      return $this->driver->execute($name, $params);
-    } catch (WebDriverException $exception) {
-      $this->dispatchOnException($exception);
-    }
   }
 }

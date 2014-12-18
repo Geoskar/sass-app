@@ -32,7 +32,7 @@ class WebDriverWindow {
    */
   public function getPosition() {
     $position = $this->executor->execute(
-      DriverCommand::GET_WINDOW_POSITION,
+      'getWindowPosition',
       array(':windowHandle' => 'current')
     );
     return new WebDriverPoint(
@@ -49,7 +49,7 @@ class WebDriverWindow {
    */
   public function getSize() {
     $size = $this->executor->execute(
-      DriverCommand::GET_WINDOW_SIZE,
+      'getWindowSize',
       array(':windowHandle' => 'current')
     );
     return new WebDriverDimension(
@@ -65,7 +65,7 @@ class WebDriverWindow {
    */
   public function maximize() {
     $this->executor->execute(
-      DriverCommand::MAXIMIZE_WINDOW,
+      'maximizeWindow',
       array(':windowHandle' => 'current')
     );
     return $this;
@@ -85,7 +85,7 @@ class WebDriverWindow {
       'height' => $size->getHeight(),
       ':windowHandle' => 'current',
     );
-    $this->executor->execute(DriverCommand::SET_WINDOW_SIZE, $params);
+    $this->executor->execute('setWindowSize', $params);
     return $this;
   }
 
@@ -103,7 +103,7 @@ class WebDriverWindow {
       'y' => $position->getY(),
       ':windowHandle' => 'current',
     );
-    $this->executor->execute(DriverCommand::SET_WINDOW_POSITION, $params);
+    $this->executor->execute('setWindowPosition', $params);
     return $this;
   }
 
@@ -113,7 +113,7 @@ class WebDriverWindow {
    * @return string Either LANDSCAPE|PORTRAIT
    */
   public function getScreenOrientation() {
-    return $this->executor->execute(DriverCommand::GET_SCREEN_ORIENTATION);
+    return $this->executor->execute('getScreenOrientation');
   }
 
 
@@ -123,18 +123,18 @@ class WebDriverWindow {
    *
    * @param string $orientation
    * @return WebDriverWindow The instance.
-   * @throws IndexOutOfBoundsException
+   * @throws IndexOutOfBoundsWebDriverError
    */
   public function setScreenOrientation($orientation) {
     $orientation = strtoupper($orientation);
     if (!in_array($orientation, array('PORTRAIT', 'LANDSCAPE'))) {
-      throw new IndexOutOfBoundsException(
+      throw new IndexOutOfBoundsWebDriverError(
         "Orientation must be either PORTRAIT, or LANDSCAPE"
       );
     }
 
     $this->executor->execute(
-      DriverCommand::SET_SCREEN_ORIENTATION,
+      'setScreenOrientation',
       array('orientation' => $orientation)
     );
 

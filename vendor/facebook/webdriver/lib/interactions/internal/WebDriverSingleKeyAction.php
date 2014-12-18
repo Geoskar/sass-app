@@ -23,8 +23,10 @@ abstract class WebDriverSingleKeyAction
       WebDriverKeyboard $keyboard,
       WebDriverMouse $mouse,
       WebDriverLocatable $location_provider = null,
-      $key = null) {
+      $key) {
     parent::__construct($keyboard, $mouse, $location_provider);
     $this->key = $key;
   }
+
+  abstract public function perform();
 }

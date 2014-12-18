@@ -18,8 +18,6 @@
  */
 interface WebDriverCommandExecutor {
 
-  /**
-   * @return mixed
-   */
-  public function execute(WebDriverCommand $command);
+  // $command and $params will be merged to an command object in the future.
+  public function execute($command, array $params =  array());
 }

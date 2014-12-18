@@ -3,22 +3,13 @@
 
 require_once('lib/__init__.php');
 
-// start Firefox with 5 second timeout
+// start Firefox
 $host = 'http://localhost:4444/wd/hub'; // this is the default
-$capabilities = DesiredCapabilities::firefox();
-$driver = RemoteWebDriver::create($host, $capabilities, 5000);
+$capabilities = array(WebDriverCapabilityType::BROWSER_NAME => 'firefox');
+$driver = new RemoteWebDriver($host, $capabilities);
 
 // navigate to 'http://docs.seleniumhq.org/'
 $driver->get('http://docs.seleniumhq.org/');
-
-// adding cookie
-$driver->manage()->deleteAllCookies();
-$driver->manage()->addCookie(array(
-  'name' => 'cookie_name',
-  'value' => 'cookie_value',
-));
-$cookies = $driver->manage()->getCookies();
-print_r($cookies);
 
 // click the link 'About'
 $link = $driver->findElement(

@@ -18,40 +18,27 @@
  */
 class RemoteTouchScreen implements WebDriverTouchScreen {
 
-  /**
-   * @var RemoteExecuteMethod
-   */
   private $executor;
 
-  /**
-   * @param RemoteExecuteMethod $executor
-   */
-  public function __construct(RemoteExecuteMethod $executor) {
-      $this->executor = $executor;
+  public function __construct($executor) {
+    $this->executor = $executor;
   }
 
   /**
-   * @param WebDriverElement $element
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function tap(WebDriverElement $element) {
-    $this->executor->execute(
-      DriverCommand::TOUCH_SINGLE_TAP,
-      array('element' => $element->getID())
-    );
+    $this->executor->execute('touchTap', array('element' => $element->getID()));
 
     return $this;
   }
 
   /**
-   * @param WebDriverElement $element
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function doubleTap(WebDriverElement $element) {
     $this->executor->execute(
-      DriverCommand::TOUCH_DOUBLE_TAP,
+      'touchDoubleTap',
       array('element' => $element->getID())
     );
 
@@ -59,13 +46,10 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
   }
 
   /**
-   * @param int $x
-   * @param int $y
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function down($x, $y) {
-    $this->executor->execute(DriverCommand::TOUCH_DOWN, array(
+    $this->executor->execute('touchDown', array(
       'x' => $x,
       'y' => $y,
     ));
@@ -75,13 +59,10 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
 
 
   /**
-   * @param int $xspeed
-   * @param int $yspeed
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function flick($xspeed, $yspeed) {
-    $this->executor->execute(DriverCommand::TOUCH_FLICK, array(
+    $this->executor->execute('touchFlick', array(
       'xspeed' => $xspeed,
       'yspeed' => $yspeed,
     ));
@@ -90,17 +71,12 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
   }
 
   /**
-   * @param WebDriverElement $element
-   * @param int $xoffset
-   * @param int $yoffset
-   * @param int $speed
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function flickFromElement(
     WebDriverElement $element, $xoffset, $yoffset, $speed
   ) {
-    $this->executor->execute(DriverCommand::TOUCH_FLICK, array(
+    $this->executor->execute('touchFlick', array(
       'xoffset' => $xoffset,
       'yoffset' => $yoffset,
       'element' => $element->getID(),
@@ -111,13 +87,11 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
   }
 
   /**
-   * @param WebDriverElement $element
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function longPress(WebDriverElement $element) {
     $this->executor->execute(
-      DriverCommand::TOUCH_LONG_PRESS,
+      'touchLongPress',
       array('element' => $element->getID())
     );
 
@@ -125,13 +99,10 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
   }
 
   /**
-   * @param int $x
-   * @param int $y
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function move($x, $y) {
-    $this->executor->execute(DriverCommand::TOUCH_MOVE, array(
+    $this->executor->execute('touchMove', array(
       'x' => $x,
       'y' => $y,
     ));
@@ -140,13 +111,10 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
   }
 
   /**
-   * @param int $xoffset
-   * @param int $yoffset
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function scroll($xoffset, $yoffset) {
-    $this->executor->execute(DriverCommand::TOUCH_SCROLL, array(
+    $this->executor->execute('touchScroll', array(
       'xoffset' => $xoffset,
       'yoffset' => $yoffset,
     ));
@@ -155,16 +123,12 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
   }
 
   /**
-   * @param WebDriverElement $element
-   * @param int $xoffset
-   * @param int $yoffset
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function scrollFromElement(
     WebDriverElement $element, $xoffset, $yoffset
   ) {
-    $this->executor->execute(DriverCommand::TOUCH_SCROLL, array(
+    $this->executor->execute('touchScroll', array(
       'element' => $element->getID(),
       'xoffset' => $xoffset,
       'yoffset' => $yoffset,
@@ -175,13 +139,10 @@ class RemoteTouchScreen implements WebDriverTouchScreen {
 
 
   /**
-   * @param int $x
-   * @param int $y
-   *
    * @return RemoteTouchScreen The instance.
    */
   public function up($x, $y) {
-    $this->executor->execute(DriverCommand::TOUCH_UP, array(
+    $this->executor->execute('touchUp', array(
       'x' => $x,
       'y' => $y,
     ));

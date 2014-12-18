@@ -26,7 +26,7 @@ class WebDriverNavigation {
 
   protected $executor;
 
-  public function __construct(ExecuteMethod $executor) {
+  public function __construct(WebDriverCommandExecutor $executor) {
     $this->executor = $executor;
   }
 
@@ -36,7 +36,7 @@ class WebDriverNavigation {
    * @return WebDriverNavigation The instance.
    */
   public function back() {
-    $this->executor->execute(DriverCommand::GO_BACK);
+    $this->executor->execute('goBack');
     return $this;
   }
 
@@ -46,7 +46,7 @@ class WebDriverNavigation {
    * @return WebDriverNavigation The instance.
    */
   public function forward() {
-    $this->executor->execute(DriverCommand::GO_FORWARD);
+    $this->executor->execute('goForward');
     return $this;
   }
 
@@ -56,7 +56,7 @@ class WebDriverNavigation {
    * @return WebDriverNavigation The instance.
    */
   public function refresh() {
-    $this->executor->execute(DriverCommand::REFRESH);
+    $this->executor->execute('refreshPage');
     return $this;
   }
 
@@ -67,7 +67,7 @@ class WebDriverNavigation {
    */
   public function to($url) {
     $params = array('url' => (string)$url);
-    $this->executor->execute(DriverCommand::GET, $params);
+    $this->executor->execute('get', $params);
     return $this;
   }
 }
