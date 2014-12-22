@@ -1,7 +1,7 @@
 <header id="header">
 
     <h1 id="site-logo">
-        <a href="{{ action('PagesController@home') }}">
+        <a href="{{ action('PagesController@dashboard') }}">
             {{ HTML::image('img/logo.png', 'Logo') }}
         </a>
     </h1>
@@ -81,15 +81,15 @@
     <nav id="sidebar">
         <ul id="main-nav" class="open-active">
 
-            <li class="{{ Active::route('home') }}">
-                <a href="{{ route('home') }}">
+            <li class="{{ Active::route('dashboard') }}">
+                <a href="{{ route('dashboard') }}">
                     <i class="fa fa-tachometer"></i>
                     Dashboard
                 </a>
             </li>
 
-            <li class="{{ Active::route('users') }}">
-                <a href="{{ route('users') }}">
+            <li class="{{ Active::route(['show_users', 'create_user_path']) }}">
+                <a href="{{ route('show_users') }}">
                     <i class="fa fa-users"></i>
                     Users
                 </a>

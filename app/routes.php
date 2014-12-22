@@ -11,6 +11,25 @@
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+Route::get('/', [
+	'as'   => 'dashboard',
+	'uses' => 'PagesController@dashboard'
+]);
 
-Route::get('users', ['as' => 'users', 'uses' => 'PagesController@users']);
+Route::get('users', [
+	'as'   => 'show_users',
+	'uses' => 'UsersController@index'
+]);
+
+/**
+ * Add new user account
+ */
+Route::get('users/create', [
+	'as'   => 'create_user_path',
+	'uses' => 'UsersController@create'
+]);
+
+Route::post('users/create', [
+	'as'   => 'create_user_path',
+	'uses' => 'UsersController@store'
+]);

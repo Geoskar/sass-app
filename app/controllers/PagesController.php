@@ -2,16 +2,15 @@
 
 class PagesController extends \BaseController {
 
-	public function home()
+	public function dashboard()
 	{
-		return View::make('pages.home')
-			->with('title', 'Dashboard');
+		return View::make('pages.dashboard')
+			->with('title', 'Dashboard')
+			->with('env', getenv('APP_ENV'));
 	}
 
-	public function users()
+	public function createUser()
 	{
-		return View::make('pages.users')
-			->with('title', 'Users');
+//		return View::make('pages')
 	}
-
 }

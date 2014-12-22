@@ -20,13 +20,18 @@
                             Manage
                         </h3>
 
-                        <ul class="portlet-tools pull-right">
-                            <li>
-                                <button class="btn btn-sm btn-default">
-                                    Add User
-                                </button>
-                            </li>
-                        </ul>
+                        <div class="btn-group portlet-tools pull-right">
+                            {{ link_to_action('create_user_path', 'Create User', null, ['class' => 'btn btn-sm btn-default']) }}
+                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="javascript:;">Edit User Types</a></li>
+                            </ul>
+                        </div>
+
+
+                        <h4>{{ $message or '' }}</h4>
 
                     </div>
                     <!-- /.portlet-header -->

@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="content-header">
-        <h1>Dashboard</h1>
+        <h1>Dashboard: {{ $env }}</h1>
     </div> <!-- #content-header -->
 
     <div id="content-container">
