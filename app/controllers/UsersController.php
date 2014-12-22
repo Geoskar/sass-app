@@ -33,6 +33,7 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
+		
 		return Redirect::route('show_users')
 			->with('message', 'Admin account successfully created.');
 	}

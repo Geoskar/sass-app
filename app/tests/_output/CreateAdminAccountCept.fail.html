@@ -174,11 +174,16 @@
                             Manage
                         </h3>
 
-                        <ul class="portlet-tools pull-right">
-                            <li>
-                                <a href="http://localhost/users/create" class="btn btn-sm btn-default">Create User</a>
-                            </li>
-                        </ul>
+                        <div class="btn-group portlet-tools pull-right">
+                            <a href="http://localhost/users/create" class="btn btn-sm btn-default">Create User</a>
+                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="javascript:;">Edit User Types</a></li>
+                            </ul>
+                        </div>
+
 
                         <h4></h4>
 
