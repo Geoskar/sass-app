@@ -123,6 +123,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
+		'Laracasts\Validation\ValidationServiceProvider',
 		'HieuLe\Active\ActiveServiceProvider',
 	],
 

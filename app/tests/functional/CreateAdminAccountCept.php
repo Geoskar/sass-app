@@ -15,9 +15,15 @@ $I->selectOption('Account Type:', 'Admin');
 $I->click('Create');
 
 $I->seeCurrentUrlEquals('/users');
-//$I->see('Admin account successfully created.');
+$I->see('Admin account successfully created.');
 
-$I->seeRecord('users', [
-	'email', 'dev.sass.ms@gmail.com',
-	'accountType', 'admin'
-]);
+$I->seeRecord('users',
+	[
+		'first_name' => 'James',
+		'last_name' => 'Potter',
+		'email' => 'dev.sass.ms@gmail.com'
+	]
+);
+
+//check if user is logged in
+//$I->assertTrue(Auth::check());

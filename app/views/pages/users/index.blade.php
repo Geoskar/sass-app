@@ -11,35 +11,23 @@
 
             <div class="col-md-12">
 
+                {{--<h4>{{ $message or '' }}</h4>--}}
+                Admin account successfully created.
+
                 <div class="portlet">
-
-                    <div class="portlet-header">
-
-                        <h3>
-                            <i class="fa fa-table"></i>
-                            Manage
-                        </h3>
-
-                        <div class="btn-group portlet-tools pull-right">
-                            {{ link_to_action('create_user_path', 'Create User', null, ['class' => 'btn btn-sm btn-default']) }}
-                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="javascript:;">Edit User Types</a></li>
-                            </ul>
-                        </div>
-
-
-                        <h4>{{ $message or '' }}</h4>
-
-                    </div>
-                    <!-- /.portlet-header -->
 
                     <div class="portlet-content">
 
                         <div class="table-responsive">
-
+                            <div class="btn-group portlet-tools pull-right">
+                                {{ link_to_action('create_user_path', 'Create User', null, ['class' => 'btn btn-sm btn-default']) }}
+                                <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="javascript:;">Edit User Types</a></li>
+                                </ul>
+                            </div>
                             <table
                                     class="table table-striped table-bordered table-hover table-highlight table-checkable"
                                     data-provide="datatable"
@@ -51,7 +39,9 @@
                                     >
                                 <thead>
                                 <tr>
-                                    <th data-filterable="true" data-sortable="true" data-direction="desc">Rendering engine</th>
+                                    <th data-filterable="true" data-sortable="true" data-direction="desc">Rendering
+                                        engine
+                                    </th>
                                     <th data-direction="asc" data-filterable="true" data-sortable="true">Browser</th>
                                     <th data-filterable="true" data-sortable="true">Platform(s)</th>
                                     <th data-filterable="false" class="hidden-xs hidden-sm">Engine version</th>
@@ -117,7 +107,8 @@
             </div>
             <!-- /.col -->
 
-        </div> <!-- /.row -->
+        </div>
+        <!-- /.row -->
 
     </div>
 @stop

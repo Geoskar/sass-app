@@ -9,19 +9,10 @@
 
         <div class="row">
 
-            <div class="col-md-12">
+            <div class="col-md-7 col-sm-9 col-xs-12">
+                @include('layouts.partials.errors')
 
                 <div class="portlet">
-
-                    <div class="portlet-header">
-
-                        <h3>
-                            <i class="fa fa-table"></i>
-                            Insert Data
-                        </h3>
-
-                    </div>
-                    <!-- /.portlet-header -->
 
                     <div class="portlet-content">
 
@@ -29,14 +20,14 @@
 
                         <!-- First Name Form Input -->
                         <div class="form-group">
-                            {{ Form::label('firstName', 'First Name:') }}
-                            {{ Form::text('firstName', null, ['class' => 'form-control', 'placeholder' => 'Enter First Name']) }}
+                            {{ Form::label('first_name', 'First Name:') }}
+                            {{ Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'Enter First Name']) }}
                         </div>
 
                         <!-- Last Name Form Input -->
                         <div class="form-group">
-                            {{ Form::label('lastName', 'Last Name:') }}
-                            {{ Form::text('lastName', null, ['class' => 'form-control', 'placeholder' => 'Enter Last Name']) }}
+                            {{ Form::label('last_name', 'Last Name:') }}
+                            {{ Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Enter Last Name']) }}
                         </div>
 
                         <!-- Email Form Input -->
@@ -47,10 +38,8 @@
 
                         <!-- Account Type Form Select List -->
                         <div class="form-group">
-                            {{ Form::label('type', 'Account Type:') }}
-                            {{ Form::select('type',
-                                ['admin' => 'Admin', 'secretary' => 'Secretary', 'tutor' => 'Tutor'],
-                                null, ['class' => 'form-control']) }}
+                            {{ Form::label('user_type_id', 'Account Type:') }}
+                            {{ Form::select('user_type_id', $user_options, null, ['class' => 'form-control']) }}
                         </div>
 
                         <!-- Create Submit Form Input -->
@@ -70,7 +59,8 @@
             </div>
             <!-- /.col -->
 
-        </div> <!-- /.row -->
+        </div>
+        <!-- /.row -->
 
     </div>
 

@@ -1,6 +1,18 @@
 <?php
 
+use SASS\Forms\UserCreationForm;
+
 class UsersController extends \BaseController {
+
+	/**
+	 * @var UserCreationForm
+	 */
+	private $userCreationForm;
+
+	function __construct(UserCreationForm $userCreationForm)
+	{
+		$this->userCreationForm = $userCreationForm;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -33,7 +45,12 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		
+		$this->userCreationForm->validate(Input::all());
+
+		User::create(
+			Input::only('first_name', 'last_name', 'email', 'user_type_id')
+		);
+
 		return Redirect::route('show_users')
 			->with('message', 'Admin account successfully created.');
 	}
