@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5aef00a36ebab155f1d21cfb795d7c6a",
+    "hash": "9d79523591e73abaf40120ac217397e0",
     "packages": [
         {
             "name": "cilex/cilex",
@@ -1033,6 +1033,46 @@
             ],
             "description": "Commands and domain events in Laravel",
             "time": "2014-08-02 15:13:53"
+        },
+        {
+            "name": "laracasts/flash",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "0c59bfde34e460ec4136f0cbe26715e7de4c7f64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/0c59bfde34e460ec4136f0cbe26715e7de4c7f64",
+                "reference": "0c59bfde34e460ec4136f0cbe26715e7de4c7f64",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2014-08-04 21:10:40"
         },
         {
             "name": "laracasts/validation",

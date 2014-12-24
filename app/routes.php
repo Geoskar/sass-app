@@ -2,7 +2,7 @@
 
 Event::listen('SASS.UserCreation.Events.UserCreated', function ($event)
 {
-	dd('send a notification email');
+//	dd('send a notification email');
 });
 
 /*

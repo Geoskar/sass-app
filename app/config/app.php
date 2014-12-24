@@ -124,6 +124,7 @@ return [
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
 		'Laracasts\Validation\ValidationServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 		'HieuLe\Active\ActiveServiceProvider',
 	],
 
@@ -138,7 +139,7 @@ return [
 	|
 	*/
 
-	'manifest'        => storage_path() . '/meta',
+	'manifest'        => storage_path().'/meta',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -192,6 +193,7 @@ return [
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Active'            => 'HieuLe\Active\Facades\Active',
+		'Flash'             => 'Laracasts\Flash\Flash'
 	],
 
 ];

@@ -33,7 +33,26 @@
     @include('layouts.partials.nav')
 
     <div id="content">
-        @yield('content')
+        <div id="content-header">
+            <h1>{{ $title }}</h1>
+        </div>
+        <!-- #content-header -->
+
+        <div id="content-container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    @include('flash::message')
+
+                    @yield('content')
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#content-container -->
+
     </div>
     <!-- #content -->
 

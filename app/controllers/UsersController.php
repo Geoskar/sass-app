@@ -63,6 +63,8 @@ class UsersController extends \BaseController {
 			new CreateUserCommand($first_name, $last_name, $email, $user_type_id)
 		);
 
+		Flash::success("User successfully created.");
+
 		return Redirect::route('show_users');
 	}
 
