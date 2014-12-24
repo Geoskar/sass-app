@@ -15,13 +15,13 @@ $I->selectOption('Account Type:', 'Admin');
 $I->click('Create');
 
 $I->seeCurrentUrlEquals('/users');
-$I->see('Admin account successfully created.');
+$I->see('User successfully created.');
 
 $I->seeRecord('users',
 	[
 		'first_name' => 'James',
-		'last_name' => 'Potter',
-		'email' => 'dev.sass.ms@gmail.com'
+		'last_name'  => 'Potter',
+		'email'      => 'dev.sass.ms@gmail.com'
 	]
 );
 
