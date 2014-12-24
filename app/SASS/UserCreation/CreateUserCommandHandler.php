@@ -6,11 +6,21 @@
  */
 
 use Laracasts\Commander\CommandHandler;
+use Laracasts\Commander\Events\DispatchableTrait;
 use SASS\Users\UserRepository;
 use SASS\Users\User;
 
+/**
+ * Class CreateUserCommandHandler
+ * @package SASS\UserCreation
+ */
 class CreateUserCommandHandler implements CommandHandler {
 
+	use DispatchableTrait;
+
+	/**
+	 * @var UserRepository
+	 */
 	protected $repository;
 
 	/**
@@ -34,6 +44,8 @@ class CreateUserCommandHandler implements CommandHandler {
 		);
 
 		$this->repository->save($user);
+
+		$this->dispatchEventsFor($user);
 
 		return $user;
 	}

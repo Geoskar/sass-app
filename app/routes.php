@@ -1,5 +1,10 @@
 <?php
 
+Event::listen('SASS.UserCreation.Events.UserCreated', function ($event)
+{
+	dd('send a notification email');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,12 +19,12 @@
 use SASS\Users\UserTypes;
 
 Route::get('/', [
-	'as' => 'dashboard',
+	'as'   => 'dashboard',
 	'uses' => 'PagesController@dashboard'
 ]);
 
 Route::get('users', [
-	'as' => 'show_users',
+	'as'   => 'show_users',
 	'uses' => 'UsersController@index'
 ]);
 
@@ -27,12 +32,12 @@ Route::get('users', [
  * Add new user account
  */
 Route::get('users/create', [
-	'as' => 'create_user_path',
+	'as'   => 'create_user_path',
 	'uses' => 'UsersController@create'
 ]);
 
 Route::post('users/create', [
-	'as' => 'create_user_path',
+	'as'   => 'create_user_path',
 	'uses' => 'UsersController@store'
 ]);
 

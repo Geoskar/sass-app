@@ -10,10 +10,12 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Laracasts\Commander\Events\EventGenerator;
+use SASS\UserCreation\Events\UserCreated;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	use UserTrait, RemindableTrait;
+	use UserTrait, RemindableTrait, EventGenerator;
 
 	/**
 	 * The database table used by the model.
@@ -49,6 +51,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$user = new static(compact('first_name', 'last_name', 'email', 'user_type_id'));
 
 		// raise an event e.g. send mail verification & password set
+		$user->raise(new UserCreated($user));
 
 		return $user;
 	}
