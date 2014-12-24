@@ -1,14 +1,24 @@
 <?php
 
+use SASS\Core\CommandBus;
 use SASS\Forms\UserCreationForm;
+use SASS\UserCreation\CreateUserCommand;
 
 class UsersController extends \BaseController {
+
+	use CommandBus;
 
 	/**
 	 * @var UserCreationForm
 	 */
 	private $userCreationForm;
 
+	/**
+	 * Constructor
+	 *
+	 * @param UserCreationForm $userCreationForm
+	 * @internal param CommandBus $commandBus
+	 */
 	function __construct(UserCreationForm $userCreationForm)
 	{
 		$this->userCreationForm = $userCreationForm;
@@ -39,7 +49,7 @@ class UsersController extends \BaseController {
 
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Create a new SASS user.
 	 *
 	 * @return Response
 	 */
@@ -47,12 +57,13 @@ class UsersController extends \BaseController {
 	{
 		$this->userCreationForm->validate(Input::all());
 
-		User::create(
-			Input::only('first_name', 'last_name', 'email', 'user_type_id')
+		extract(Input::only('first_name', 'last_name', 'email', 'user_type_id'));
+
+		$this->execute(
+			new CreateUserCommand($first_name, $last_name, $email, $user_type_id)
 		);
 
-		return Redirect::route('show_users')
-			->with('message', 'Admin account successfully created.');
+		return Redirect::route('show_users');
 	}
 
 

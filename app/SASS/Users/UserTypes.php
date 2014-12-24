@@ -1,10 +1,9 @@
-<?php
+<?php namespace SASS\Users;
+use Eloquent;
 
 /**
- * Created by PhpStorm.
- * User: Rizart
- * Date: 12/23/2014
- * Time: 1:05 AM
+ * @author Rizart Dokollari <r.dokollari@gmail.com>
+ * @version  12/23/2014
  */
 class UserTypes extends Eloquent {
 
@@ -19,7 +18,7 @@ class UserTypes extends Eloquent {
 	 * Field allowed to be mass assigned.
 	 * @var array
 	 */
-	protected $fillable = array('type_name');
+	protected $fillable = ['type_name'];
 
 	public function users()
 	{

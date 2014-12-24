@@ -11,6 +11,8 @@
 |
 */
 
+use SASS\Users\UserTypes;
+
 Route::get('/', [
 	'as' => 'dashboard',
 	'uses' => 'PagesController@dashboard'
