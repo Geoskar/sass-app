@@ -29,7 +29,7 @@ Route::get('users', [
 ]);
 
 /**
- * Add new user account
+ * Add new user account!
  */
 Route::get('users/create', [
 	'as'   => 'create_user_path',
@@ -41,6 +41,24 @@ Route::post('users/create', [
 	'uses' => 'UsersController@store'
 ]);
 
+
+/**
+ * Sessions
+ */
+Route::get('login', [
+	'as'   => 'login_path',
+	'uses' => 'SessionsController@create'
+]);
+
+Route::post('login', [
+	'as'   => 'login_path',
+	'uses' => 'SessionsController@store'
+]);
+
+
+/**
+ * Views.
+ */
 View::composer('pages.users.create', function ($view)
 {
 	$user_types = UserTypes::all();

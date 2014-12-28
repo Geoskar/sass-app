@@ -1,0 +1,7 @@
+SASS\Users\User:
+  email: $string@example.com
+  first_name: $string
+  last_name: $string
+  password: $string
+  created_at: $date
+  updated_at: $date

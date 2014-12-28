@@ -1,7 +1,7 @@
 <?php
 $I = new FunctionalTester($scenario);
 $I->am('admin');
-$I->wantTo('create an admin account for the SASS app');
+$I->wantTo('register an new user for the SASS App');
 
 $I->amOnPage('/users');
 $I->click('Create User');
