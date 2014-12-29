@@ -55,6 +55,10 @@ Route::post('login', [
 	'uses' => 'SessionsController@store'
 ]);
 
+/**
+ * Todo
+ */
+Route::get('tasks', 'TasksController@index');
 
 /**
  * Views.

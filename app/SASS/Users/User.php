@@ -35,7 +35,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * Field allowed to be mass assigned.
 	 * @var array
 	 */
-	protected $fillable = ['first_name', 'last_name', 'email', 'user_type_id'];
+	protected $fillable = ['first_name', 'last_name', 'email', 'user_type_id', 'password'];
 
 	/**
 	 * Create a new user

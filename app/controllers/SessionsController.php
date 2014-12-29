@@ -28,7 +28,7 @@ class SessionsController extends \BaseController {
 			->with('title', 'Sign In');
 	}
 
- 	/**
+	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
@@ -43,9 +43,10 @@ class SessionsController extends \BaseController {
 		{
 			Flash::success('Welcome back!');
 
-			return Redirect::intended('todo');
+			return Redirect::intended('tasks');
 		}
 
+		// TODO: only if user has tasks redirect to tasks, else redirect to dashboard
 	}
 
 

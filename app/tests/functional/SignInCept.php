@@ -5,5 +5,7 @@ $I->wantTo('sign in to my SASS account.');
 
 $I->signIn();
 
-$I->seeInCurrentUrl('/todo');
+$I->assertTrue(Auth::check());
+
+$I->seeInCurrentUrl('/tasks');
 $I->see('Welcome back!');

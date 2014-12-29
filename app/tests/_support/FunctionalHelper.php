@@ -7,9 +7,14 @@ use Laracasts\TestDummy\Factory as TestDummy;
 
 class FunctionalHelper extends \Codeception\Module {
 
+	/**
+	 * Sign In
+	 *
+	 * @throws \Codeception\Exception\Module
+	 */
 	public function signIn()
 	{
-		$email = 'foo@example.com';
+		$email = 'fooexample.com';
 		$password = 'foo';
 
 		$this->haveAnAccount(compact('email', 'password'));
